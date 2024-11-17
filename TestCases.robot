@@ -1,15 +1,11 @@
 *** Settings ***
 Documentation   Auto1/QA Task
 Library         SeleniumLibrary
+Library         helpers  # Load the Python helper library
 Library         String
-Library         helpers.HelpLib
 Library         Collections    
 Suite Setup     Open URL Locally
 Suite Teardown  Close Browser
-
-*** Variables ***
-# Chrome options formatted as a list
-@{CHROME_OPTIONS}    headless    disable-gpu    disable-notifications    start-maximized
 
 *** Test Cases ***
 TC1 - Check Filters on Advanced Search Page
@@ -32,8 +28,9 @@ Open Tests in Source Labs
     Create WebDriver    Remote    desired_capabilities=${desired_capabilities}    command_executor=${executor}
 
 Open URL Locally
-    # Set up Chrome with options
-    Create WebDriver    Chrome    options=${CHROME_OPTIONS}
+    # Get Chrome options from the helper
+    ${options}=    Evaluate    helpers.get_chrome_options()    modules=helpers
+    Create WebDriver    Chrome    options=${options}
     Maximize Browser Window
 
 Open URL AutoHero
