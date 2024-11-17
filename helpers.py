@@ -1,4 +1,13 @@
 import random
+from selenium import webdriver
+
+def get_chrome_options():
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")  # Run in headless mode
+    options.add_argument("--disable-gpu")  # Disable GPU rendering
+    options.add_argument("--disable-notifications")  # Disable notifications
+    options.add_argument("--start-maximized")  # Start maximized
+    return options
 
 class HelpLib():
 
