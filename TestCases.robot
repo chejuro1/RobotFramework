@@ -8,7 +8,8 @@ Suite Setup     Open URL Locally
 Suite Teardown  Close Browser
 
 *** Variables ***
-${CHROME_OPTIONS}    --headless --disable-gpu --disable-notifications --start-maximized
+# Chrome options formatted as a list
+@{CHROME_OPTIONS}    headless    disable-gpu    disable-notifications    start-maximized
 
 *** Test Cases ***
 TC1 - Check Filters on Advanced Search Page
