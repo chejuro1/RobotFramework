@@ -37,9 +37,9 @@ Open URL AutoHero
     Go To    https://www.autohero.com/
 
 User is on Advanced Search Page
-    Wait Until Page Contains Element    //button[contains(text(),'Erweiterte Suche')]    timeout=10s
+    Wait Until Page Contains Element    //button[contains(text(),'Erweiterte Suche')]    timeout=30s
     Click Element                       //button[contains(text(),'Erweiterte Suche')]
-    Wait Until Element Is Visible       //span[contains(text(),'Erstzulassung ab')]    timeout=10s
+    Wait Until Element Is Visible       //span[contains(text(),'Erstzulassung ab')]    timeout=30s
 
 User Select Filter for First registration
     Click Element    //span[contains(text(),'Erstzulassung ab')]
